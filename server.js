@@ -23,19 +23,19 @@ connection.connect(function(err) {
 });
 
 function runSearch() {
-  inquirer
-    .prompt({
-      name: "action",
-      type: "rawlist",
-      message: "What would you like to do?",
-      choices: [
-        "View all employees",
-        "View all departments",
-        "View all roles",
-        "Add an employee",
-        "Add department",
-        "Add a role",
-        "EXIT"
+    inquirer
+        .prompt({
+        name: "action",
+        type: "rawlist",
+        message: "What would you like to do?",
+        choices: [
+            "View all employees",
+            "View all departments",
+            "View all roles",
+            "Add an employee",
+            "Add department",
+            "Add a role",
+            "EXIT"
         ]
     })
     .then(function (answer) {
