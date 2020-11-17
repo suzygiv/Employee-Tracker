@@ -13,7 +13,11 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
+<<<<<<< HEAD
   password: process.env.DB_PASSWORD,
+=======
+  password: "",
+>>>>>>> 8fbbe3f28d7bd5e17d5836e3ef36af0a38613e4d
   database: "employee_trackerDB"
 });
 
