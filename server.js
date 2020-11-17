@@ -36,8 +36,9 @@ function runSearch() {
         "Add department",
         "Add a role",
         "EXIT"
-]
-}).then(function (answer) {
+        ]
+    })
+    .then(function (answer) {
     switch (answer.action) {
     case "View all employees":
         viewEmployees();
