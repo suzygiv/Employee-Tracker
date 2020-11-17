@@ -1,7 +1,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 const consoleTable = require("console.table");
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -39,41 +39,41 @@ function runSearch() {
         ]
     })
     .then(function (answer) {
-    switch (answer.action) {
-    case "View all employees":
-        viewEmployees();
-        break;
+        switch (answer.action) {
+        case "View all employees":
+            viewEmployees();
+            break;
 
-    case "View all departments":
-        viewDepartments();
-        break;
+        case "View all departments":
+            viewDepartments();
+            break;
 
-    case "View all roles":
-        viewRoles();
-        break;
+        case "View all roles":
+            viewRoles();
+            break;
 
-    case "Add an employee":
-        addEmployee();
-        break;
+        case "Add an employee":
+            addEmployee();
+            break;
 
-    case "Add department":
-        addDepartment();
-        break;
+        case "Add department":
+            addDepartment();
+            break;
 
-    case "Add a role":
-        addRole();
-        break;
-    
-    case "Update Employee Role":
-        updateRole();
-        break;
+        case "Add a role":
+            addRole();
+            break;
+        
+        case "Update Employee Role":
+            updateRole();
+            break;
 
-    case "EXIT": 
-        endApp();
-        break;
+        case "EXIT": 
+            endApp();
+            break;
 
-    default:
-        break;
+        default:
+            break;
         }
     })
 }
