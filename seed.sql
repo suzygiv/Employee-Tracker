@@ -1,4 +1,4 @@
-use employee_trackerDB;
+use employee_trackerDB
 
 -- DEPARTMENT SEEDS -----
 INSERT INTO department (name)

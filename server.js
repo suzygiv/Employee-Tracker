@@ -35,6 +35,7 @@ function runSearch() {
             "Add an employee",
             "Add department",
             "Add a role",
+            "Update employee",
             "EXIT"
         ]
     })
@@ -65,7 +66,7 @@ function runSearch() {
             break;
         
         case "Update Employee Role":
-            updateRole();
+            updateEmployee();
             break;
 
         case "EXIT": 
@@ -113,18 +114,18 @@ function addEmployee() {
     inquirer
         .prompt([
             {
-                name: "first_name",
-                type: "input", 
+                type: "input",
                 message: "Employee's first name: ",
+                name: "first_name"
             },
             {
-                name: "last_name",
                 type: "input", 
-                message: "Employee's last name: "
+                message: "Employee's last name: ",
+                name: "last_name"
             },
             {
-                name: "role", 
                 type: "list",
+                name: "role", 
                 choices: function() {
                 var roleArray = [];
                 for (let i = 0; i < res.length; i++) {
@@ -162,9 +163,9 @@ function addDepartment() {
     inquirer
     .prompt([
         {
-            name: "new_dept", 
             type: "input", 
-            message: "What is the new department you would like to add?"
+            message: "What is the new department you would like to add?",
+            name: "new_dept"
         }
     ]).then(function (answer) {
         connection.query(
@@ -188,19 +189,18 @@ function addRole() {
 
     inquirer 
     .prompt([
-        {
-            name: "new_role",
-            type: "input", 
-            message: "What is the title of the new role?"
+        {   type: "input",
+            message: "What is the title of the new role?",
+            name: "new_role"
         },
         {
-            name: "salary",
             type: "input",
-            message: "What is the salary of this position? (Enter a number?)"
+            message: "What is the salary of this position? (Enter a number?)",
+            name: "salary"
         },
         {
-            name: "deptChoice",
             type: "rawlist",
+            name: "deptChoice",
             choices: function() {
                 var deptArray = [];
                 for (let i = 0; i < res.length; i++) {
@@ -216,7 +216,6 @@ function addRole() {
                 deptID = res[j].id;
             }
         }
-
         connection.query(
             "INSERT INTO role SET ?",
             {
@@ -232,9 +231,52 @@ function addRole() {
         )
     })
 })
-    
-    
+      
 }
+
+function updateEmployee() {
+    connection.query("SELECT employee.last_name, role.title FROM employee JOIN role ON employee.role_id = role_id;", function(err, res) {
+    if (err) throw err
+      
+        inquirer.prompt([
+              {
+                type: "rawlist",
+                name: "lastName",
+                choices: function() {
+                  var lastName = [];
+                  for (var i = 0; i < res.length; i++) {
+                    lastName.push(res[i].last_name);
+                  }
+                  return lastName;
+                },
+                message: "What is the Employee's last name? ",
+              },
+              {
+                type: "rawlist",
+                name: "role",
+                message: "What is the Employee's new title? ",
+                choices: selectRole()
+              },
+          ]).then(function(answer) {
+            var roleId = selectRole().indexOf(answer.role) + 1
+            connection.query("UPDATE employee SET WHERE ?", 
+            {
+              lastName: answer.last_name       
+            }, 
+            {
+              roleID: answer.role_id       
+            }, 
+            function(err){
+                if (err) throw err
+                console.table(val)
+                runSearch()
+            })
+      
+        });
+      });
+
+}
+
 
 function endApp() {
     connection.end();
