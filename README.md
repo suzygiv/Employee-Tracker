@@ -32,8 +32,9 @@ Run the following command at the root of your project and answer the prompted qu
 
 Below is a walkthrough video that demonstrates the entirety of the application's functionality.
 
+![README gif](https://drive.google.com/file/d/1CTyZLqwkKVFIl8i3g9aXKG_tM2lcklCQ/view)
 
-To view the entire walkthrough video, click here: 
+To view the entire walkthrough video, click here: https://drive.google.com/file/d/1eNIXv7cxuFcXKQbxXiWYiOQLYtj0NqgA/view?usp=sharing
 
 ## Licence
 ![License](https://img.shields.io/badge/License-mit-blue.svg "License Badge")
