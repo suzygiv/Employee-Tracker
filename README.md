@@ -30,7 +30,7 @@ Run the following command at the root of your project and answer the prompted qu
 
 ![Employees](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Employees.PNG)
 
-![Roles](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Employees.PNG)
+![Roles](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Roles.PNG)
 
 ## Video 
 
