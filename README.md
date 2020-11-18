@@ -26,8 +26,9 @@ Run the following command at the root of your project and answer the prompted qu
 
 ## Screenshots
 
-![Employee Tracker]()
+![Departments](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Departments.PNG)
 
+![Employees](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Departments.PNG)
 ## Video 
 
 Below is a walkthrough video that demonstrates the entirety of the application's functionality.
