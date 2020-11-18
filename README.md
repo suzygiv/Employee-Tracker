@@ -32,7 +32,7 @@ Run the following command at the root of your project and answer the prompted qu
 
 Below is a walkthrough video that demonstrates the entirety of the application's functionality.
 
-![README gif](https://drive.google.com/file/d/1CTyZLqwkKVFIl8i3g9aXKG_tM2lcklCQ/view)
+![README gif](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/ng/app/app.html#/files/6bd74d90-4e99-4cf1-bddc-a32ad4b13dc0)
 
 To view the entire walkthrough video, click here: https://drive.google.com/file/d/1eNIXv7cxuFcXKQbxXiWYiOQLYtj0NqgA/view?usp=sharing
 
