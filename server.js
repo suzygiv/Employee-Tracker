@@ -65,7 +65,7 @@ function runSearch() {
             addRole();
             break;
         
-        case "Update Employee Role":
+        case "Update employee":
             updateEmployee();
             break;
 
@@ -234,48 +234,71 @@ function addRole() {
       
 }
 
-function updateEmployee() {
-    connection.query("SELECT employee.last_name, role.title FROM employee JOIN role ON employee.role_id = role_id;", function(err, res) {
-    if (err) throw err
-      
-        inquirer.prompt([
-              {
-                type: "rawlist",
-                name: "lastName",
-                choices: function() {
-                  var lastName = [];
-                  for (var i = 0; i < res.length; i++) {
-                    lastName.push(res[i].last_name);
-                  }
-                  return lastName;
-                },
-                message: "What is the Employee's last name? ",
-              },
-              {
-                type: "rawlist",
-                name: "role",
-                message: "What is the Employee's new title? ",
-                choices: selectRole()
-              },
-          ]).then(function(answer) {
-            var roleId = selectRole().indexOf(answer.role) + 1
-            connection.query("UPDATE employee SET WHERE ?", 
-            {
-              lastName: answer.last_name       
-            }, 
-            {
-              roleID: answer.role_id       
-            }, 
-            function(err){
-                if (err) throw err
-                console.table(val)
-                runSearch()
-            })
-      
-        });
-      });
+function updateEmployee() { 
+    connection.query("select * from employee inner join role on employee.role_id = role.id inner join department on role.department_id = department.id;", function(err, res) {
+        if (err) throw err
+          
+            inquirer.prompt([
+                  {
+                    type: "rawlist",
+                    name: "lastName",
+                    choices: function() {
+                      var lastName = [];
+                      for (var i = 0; i < res.length; i++) {
+                        lastName.push(res[i].last_name);
+                      }
+                      return lastName;
+                    },
+                    message: "What is the Employee's last name? ",
+                    },
+                    {
+                        type: "input",
+                        message: "What is the title of the new role?",
+                        name: "new_role"
+                    },
+                    {
+                        type: "input",
+                        message: "What is the salary of this position? (Enter a number?)",
+                        name: "salary"
+                    },
+                    {
+                        type: "rawlist",
+                        name: "deptChoice",
+                        choices: function() {
+                            var deptArray = [];
+                            for (let i = 0; i < res.length; i++) {
+                            deptArray.push(res[i].name);
+                            }
+                            return deptArray;
+                        },
+                    }
+                ]).then(function (answer) {
+                    let deptID;
+                    for (let j = 0; j < res.length; j++) {
+                        if (res[j].name == answer.deptChoice) {
+                            deptID = res[j].id;
+                        }
+                    }
+                    connection.query(
+                        "INSERT INTO role SET ?",
+                        {
+                            title: answer.new_role,
+                            salary: answer.salary,
+                            department_id: deptID
+                        },
 
-}
+                        function (err, res) {
+                            if(err)throw err;
+                            console.log("Your employee's role has been updated!");
+                            runSearch();
+                        }
+                    )
+                })
+            })
+                  
+        }
+    
+   
 
 
 function endApp() {

@@ -32,12 +32,12 @@ VALUE ("Celia", "Boone", null, 1);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
 VALUE ("Katie", "Lox", null, 2);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Sarah","Pinckney",null,3);
+VALUE ("Sarah","Pinckney", 1, 3);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
 VALUE ("Henry", "Kelley", 1, 4);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
 VALUE ("Owen", "Ewell", 4, 5);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Patrick", "Daley", 1, 6);
+VALUE ("Patrick", "Daley", null, 6);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
 VALUE ("Ben", "Welsh", 2, 7);
