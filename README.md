@@ -28,7 +28,10 @@ Run the following command at the root of your project and answer the prompted qu
 
 ![Departments](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Departments.PNG)
 
-![Employees](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Departments.PNG)
+![Employees](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Employees.PNG)
+
+![Roles](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Employees.PNG)
+
 ## Video 
 
 Below is a walkthrough video that demonstrates the entirety of the application's functionality.
