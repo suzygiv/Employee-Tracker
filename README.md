@@ -38,7 +38,7 @@ Below is a walkthrough video that demonstrates the entirety of the application's
 
 ![README gif](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Employee%20Tracker%20gif%20(1).gif)
 
-To view the entire walkthrough video, click here: https://drive.google.com/file/d/1eNIXv7cxuFcXKQbxXiWYiOQLYtj0NqgA/view?usp=sharing
+To view the entire walkthrough video, click here: https://drive.google.com/file/d/1Xu7_E_Jr_oc-kL5A1rCKI31xW_M2lbut/view?usp=sharing
 
 ## Licence
 ![License](https://img.shields.io/badge/License-mit-blue.svg "License Badge")
