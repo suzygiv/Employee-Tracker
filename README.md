@@ -36,7 +36,7 @@ Run the following command at the root of your project and answer the prompted qu
 
 Below is a walkthrough video that demonstrates the entirety of the application's functionality.
 
-![README gif](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Employee%20Tracker%20GIF.gif)
+![README gif](https://github.com/suzygiv/Employee-Tracker/blob/main/Assets/Employee%20Tracker%20gif%20(1).gif)
 
 To view the entire walkthrough video, click here: https://drive.google.com/file/d/1eNIXv7cxuFcXKQbxXiWYiOQLYtj0NqgA/view?usp=sharing
 
