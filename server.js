@@ -29,18 +29,31 @@ function runSearch() {
         type: "rawlist",
         message: "What would you like to do?",
         choices: [
+            "Add department",
+            "Add a role",
+            "Add an employee",
             "View all employees",
             "View all departments",
             "View all roles",
-            "Add an employee",
-            "Add department",
-            "Add a role",
             "Update employee",
             "EXIT"
         ]
     })
     .then(function (answer) {
         switch (answer.action) {
+        
+        case "Add department":
+            addDepartment();
+            break;
+
+        case "Add a role":
+            addRole();
+            break;
+
+        case "Add an employee":
+            addEmployee();
+            break;
+
         case "View all employees":
             viewEmployees();
             break;
@@ -51,18 +64,6 @@ function runSearch() {
 
         case "View all roles":
             viewRoles();
-            break;
-
-        case "Add an employee":
-            addEmployee();
-            break;
-
-        case "Add department":
-            addDepartment();
-            break;
-
-        case "Add a role":
-            addRole();
             break;
         
         case "Update employee":
@@ -76,34 +77,6 @@ function runSearch() {
         default:
             break;
         }
-    })
-}
-
-function viewEmployees() {
-    var query = "SELECT * FROM employee";
-    connection.query(query, function(err, res) {
-        if (err) throw err;
-        console.log(res.length + " employees found!");
-        console.table('All Employees:', res); 
-        runSearch();
-    })
-}
-
-function viewDepartments() {
-    var query = "SELECT * FROM department";
-    connection.query(query, function(err, res) {
-        if(err)throw err;
-        console.table('All Departments:', res);
-        runSearch();
-    })
-}
-
-function viewRoles() {
-    var query = "SELECT * FROM role";
-    connection.query(query, function(err, res){
-        if (err) throw err;
-        console.table('All roles:', res);
-        runSearch();
     })
 }
 
@@ -234,6 +207,33 @@ function addEmployee() {
     })
 }
 
+function viewEmployees() {
+    var query = "SELECT * FROM employee";
+    connection.query(query, function(err, res) {
+        if (err) throw err;
+        console.log(res.length + " employees found!");
+        console.table('All Employees:', res); 
+        runSearch();
+    })
+}
+
+function viewDepartments() {
+    var query = "SELECT * FROM department";
+    connection.query(query, function(err, res) {
+        if(err)throw err;
+        console.table('All Departments:', res);
+        runSearch();
+    })
+}
+
+function viewRoles() {
+    var query = "SELECT * FROM role";
+    connection.query(query, function(err, res){
+        if (err) throw err;
+        console.table('All roles:', res);
+        runSearch();
+    })
+}
 
     function updateEmployee() {
     connection.query("select * from employee inner join role on employee.role_id = role.id inner join department on role.department_id = department.id;", function(err, res) {
